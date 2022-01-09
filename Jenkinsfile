@@ -11,7 +11,7 @@ pipeline{
 
             }
             steps{
-                echo "Building application"
+                echo "Construiu"
             }
         }
         stage("test"){
