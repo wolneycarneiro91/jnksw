@@ -4,8 +4,9 @@ pipeline{
 
         stage("build"){
             steps{
-                echo "Installing laravel"
-                sh 'composer install'
+                echo "Installing composer and laravel"
+                sh 'curl -sS https://getcomposer.org/installer | php'
+                sh 'mv composer.phar /usr/local/bin/composer'
                 sh 'curl -s "https://laravel.build/judge-app?with=pgsql,redis" | bash'
                 sh 'php artisan --version'
             }
